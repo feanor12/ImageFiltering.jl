@@ -55,10 +55,6 @@ using .Algorithm: Alg, FFT, FIR, FIRTiled, IIR, Mixed
 
 Alg(r::AbstractResource{A}) where {A<:Alg} = r.settings
 
-# `centered` is required by `KernelFactors` and `Kernel` modules
-# `deprecated.jl` currently must be put before the definition of them
-include("deprecated.jl")
-
 include("utils.jl")
 include("kernelfactors.jl")
 using .KernelFactors: TriggsSdika, IIRFilter, ReshapedOneD, iterdims, kernelfactors
